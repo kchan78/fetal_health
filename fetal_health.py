@@ -24,8 +24,8 @@ fetal_health_file = st.file_uploader('Upload your own fetal health data')
 rf_pickle = open('rf_fetal.pickle', 'rb') 
 # Map file
 map_pickle = open('output_fetal.pickle', 'rb') 
-rf_model = pickle.load(rf_pickle) 
 unique_fetal_mapping = pickle.load(map_pickle) 
+rf_model = pickle.load(rf_pickle)
 map_pickle.close()
 rf_pickle.close()
 
