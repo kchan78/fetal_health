@@ -5,8 +5,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import warnings
-warnings.filterwarnings('ignore')
 
 st.title('Fetal Health Classification: A Machine Learning App') 
 
@@ -24,13 +22,12 @@ fetal_health_file = st.file_uploader('Upload your own fetal health data')
 # Reading the pickle files that we created before 
 # Random Forest
 rf_pickle = open('rf_fetal.pickle', 'rb') 
-rf_model = pickle.load(rf_pickle) 
-rf_pickle.close()
-
 # Map file
 map_pickle = open('output_fetal.pickle', 'rb') 
+rf_model = pickle.load(rf_pickle) 
 unique_fetal_mapping = pickle.load(map_pickle) 
 map_pickle.close()
+rf_pickle.close()
 
 # color function definition 
 # NOTE: Code from https://www.geeksforgeeks.org/highlight-pandas-dataframes-specific-columns-using-applymap/
