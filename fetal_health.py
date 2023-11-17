@@ -5,6 +5,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import sklearn
 
 st.title('Fetal Health Classification: A Machine Learning App') 
 
