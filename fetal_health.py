@@ -28,7 +28,8 @@ map_pickle.close()
 
 # Load and display original dataset
 original_df = pd.read_csv('fetal_health.csv')
-st.dataframe(original_df.head())
+original_df_sample = original_df.drop(columns = ['fetal_health']).head()
+st.dataframe(original_df_sample)
 
 fetal_health_file = st.file_uploader('Upload your own fetal health data')
 
